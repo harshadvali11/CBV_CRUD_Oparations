@@ -20,6 +20,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/',home.as_view(),name='home'),
     path('list/',SchoolListView.as_view(),name='list'),
+    path('create/',SchoolCreateView.as_view(),name='create'),
+    re_path('update/(?P<pk>\d+)/',SchoolUpdateView.as_view(),name='update'),
+    re_path('delete/(?P<pk>\d+)/',SchoolDeleteView.as_view(),name='delete'),
+
     re_path('(?P<pk>\d+)/',SchoolDetailView.as_view(),name='detail'),
 
 ]
